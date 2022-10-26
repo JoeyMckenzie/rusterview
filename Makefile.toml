@@ -1,0 +1,11 @@
+[env] ## tells cargo make that we're in the context of a Cargo workspace
+CARGO_MAKE_EXTEND_WORKSPACE_MAKEFILE = true
+
+[config] ## we want most/all of our tasks to run in the context of a workspace
+default_to_workspace = false
+
+[tasks.pre-commit]
+dependencies = [
+    "lint", ## lints our code using clippy during pre-commit
+    "lint-staged", ## uses cargofmt to format our staged files
+]

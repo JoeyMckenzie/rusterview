@@ -1,0 +1,7 @@
+[workspace]
+members = [
+    "arrays",
+]
+
+[profile.release]
+debug = true
